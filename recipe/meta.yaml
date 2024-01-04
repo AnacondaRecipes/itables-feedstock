@@ -16,14 +16,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python
     - requests
     - setuptools
+    - wheel
   run:
     - ipython
     - pandas
-    - numpy
-    - python >=2.7
+    - python
 
 test:
   imports:
