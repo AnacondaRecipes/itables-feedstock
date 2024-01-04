@@ -40,6 +40,7 @@ about:
     This packages changes how Pandas and Polars DataFrames are rendered in Jupyter Notebooks.
     With itables you can display your tables as interactive datatables that you can sort, paginate, scroll or filter.
   license: MIT
+  license_family: MIT
   license_file: LICENSE
   doc_url: https://mwouts.github.io/itables
   dev_url: https://github.com/mwouts/itables
