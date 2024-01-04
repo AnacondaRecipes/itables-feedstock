@@ -1,7 +1,6 @@
 {% set name = "itables" %}
 {% set version = "1.6.3" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -12,8 +11,7 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
 
 requirements:
   host:
