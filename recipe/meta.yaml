@@ -38,6 +38,7 @@ test:
   requires:
     - pip
 
+
 about:
   home: https://github.com/mwouts/itables
   summary: Interactive Tables in Jupyter
@@ -46,7 +47,9 @@ about:
     With itables you can display your tables as interactive datatables that you can sort, paginate, scroll or filter.
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: 
+    - LICENSE
+    - LICENSE_jquery.txt
   doc_url: https://mwouts.github.io/itables
   dev_url: https://github.com/mwouts/itables
 
