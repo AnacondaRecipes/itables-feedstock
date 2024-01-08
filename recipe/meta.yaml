@@ -22,7 +22,6 @@ requirements:
   host:
     - pip
     - python
-    - requests
     - setuptools
     - wheel
   run:
