@@ -8,12 +8,17 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/itables-{{ version }}.tar.gz
   sha256: ce1c4a856ed2c40f17da870aaf57808f87bdc8b1c411ddbc154fa0f59be361f4
+  patches:
+    - remove-external-downloads.patch
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
 
 requirements:
+  build:
+    - patch     # [not win]
+    - m2-patch  # [win]
   host:
     - pip
     - python
