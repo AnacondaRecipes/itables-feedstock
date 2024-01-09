@@ -8,22 +8,26 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/itables-{{ version }}.tar.gz
   sha256: ce1c4a856ed2c40f17da870aaf57808f87bdc8b1c411ddbc154fa0f59be361f4
+  patches:
+    - remove-external-downloads.patch
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
 
 requirements:
+  build:
+    - patch     # [not win]
+    - m2-patch  # [win]
   host:
     - pip
-    - python >=2.7
-    - requests
+    - python
     - setuptools
+    - wheel
   run:
     - ipython
     - pandas
-    - numpy
-    - python >=2.7
+    - python
 
 test:
   imports:
@@ -33,13 +37,20 @@ test:
   requires:
     - pip
 
+
 about:
   home: https://github.com/mwouts/itables
   summary: Interactive Tables in Jupyter
+  description: |
+    This packages changes how Pandas and Polars DataFrames are rendered in Jupyter Notebooks.
+    With itables you can display your tables as interactive datatables that you can sort, paginate, scroll or filter.
   license: MIT
-  license_file:
+  license_family: MIT
+  license_file: 
     - LICENSE
     - LICENSE_jquery.txt
+  doc_url: https://mwouts.github.io/itables
+  dev_url: https://github.com/mwouts/itables
 
 extra:
   recipe-maintainers:
